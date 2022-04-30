@@ -78,6 +78,17 @@
     </th:block>
   </div>
   </div>
+  <script>
+    // 대표 해시태그 정보 텍스트 앞에 # 붙이기
+    const $mainHashtag = document.querySelectorAll('.mainHashtag');
+
+    $mainHashtag.forEach(ele => {
+      if(ele.textContent.trim().length > 1) {
+        const $hashtagView = "#" + ele.textContent;
+        ele.textContent = $hashtagView;
+      }
+    });
+  </script>
 </main>
 </body>
 </html>

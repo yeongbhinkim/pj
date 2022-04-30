@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Title</title>
 </head>
-
 <body>
 <main th:fragment="contentItem">
 
@@ -99,7 +98,7 @@
             </div>
             <div class="shop-info-content shop-hashtag-sub-box">
               <div class="shop-hashtag-icon-box icon-box">
-                <img src="img/icon/icon-hashtag.png" class="hashtag-icon"></img>
+                <img src="/img/icon/icon-hashtag.png" class="hashtag-icon">
               </div>
               <div class="hashtag-txt txt-box">
                 <div>
@@ -111,6 +110,21 @@
                   <span class="mainHashtag" th:text="*{hcategoryh0103}">#해시태그3</span>
                   <span class="mainHashtag" th:text="*{hcategoryh0104}">#해시태그4</span>
                 </div>
+              </div>
+            </div>
+
+            <div class="shop-info-content">
+              <div class="shop-parking-icon-box icon-box">
+                <img src="/img/icon/parking.png" class="allday-parking-icon">
+              </div>
+              <div class="parking-txt txt-box">
+                <span th:text="*{parking}">주차</span>
+              </div>
+              <div class="shop-allday-icon-box icon-box">
+                <img src="/img/icon/24-hours.png" class="allday-parking-icon">
+              </div>
+              <div class="allday-txt txt-box">
+                <span th:text="*{allday}">24시간</span>
               </div>
             </div>
 
@@ -135,6 +149,7 @@
 
             <!-- 지도를 표시할 div 입니다 -->
             <div id="map" style="width: 100%; height: 100%;"></div>
+            <p class="map_info">마커를 클릭하면 카카오맵으로 이동합니다.</p>
 
           </div>
         </div>

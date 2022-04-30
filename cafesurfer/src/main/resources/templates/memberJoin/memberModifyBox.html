@@ -19,125 +19,90 @@
 <body>
 <main th:fragment="memberModifyBox">
 
-  <div>
-    <form id="modifyForm" method="post" th:object="${modifyForm}" >
+  <form id="modifyForm" method="post" th:object="${modifyForm}" >
 
-      <div class="content">
-
-        <table>
-          <th color="blue" align ="center" colspan = "2">회원수정</th>
-          <tr>
-            <td class="box1">
-              <label for="memberEmail" th:for="${#ids.next('memberEmail')}">이메일</label>
-
-            </td>
-            <td class="box2">
-              <li>
-                <input type="text" name="memberEmail" id="memberEmail" th:field="*{memberEmail}"
-                       th:class="${#fields.hasErrors('memberEmail') ? 'fieldError' : 'fieldSuccess'}"
-                       disabled="disabled">
-              </li>
-            </td>
-          </tr>
-          <td class="box1">
-            <label for="memberPasswd"   th:for="${#ids.next('memberPasswd')}">비밀번호</label>
-          </td>
-          <td class="box2">
+    <div class="container">
+      <div class="container-body">
+        <div class="inputInfo">
+          <div class="member_email">
             <li>
-              <input type="password" placeholder="비밀번호를 입력해주세요" name="memberPasswd" id="memberPasswd" th:field="*{memberPasswd}"
+              <input type="text" name="email" id="memberEmail" th:field="*{memberEmail}"
+                     th:class="${#fields.hasErrors('memberEmail') ? 'fieldError' : 'fieldSuccess'}" readonly="readonly">
+            </li>
+          </div>
+          <div class="member_passwd">
+            <li>
+              <input type="password" placeholder="비밀번호를 입력해주세요." name="memberPasswd" id="memberPasswd"
+                     th:field="*{memberPasswd}"
                      th:class="${#fields.hasErrors('memberPasswd') ? 'fieldError' : 'fieldSuccess'}">
             </li>
             <li th:if="${#fields.hasErrors('memberPasswd')}">
               <p th:errors="*{memberPasswd}" th:errorclass="fieldError"></p>
             </li>
-          </td>
-          </tr>
-          <tr>
-            <td class="box1">
-              <label for="memberPasswd"  th:for="${#ids.next('memberPasswdChk')}">비밀번호 확인</label>
-            </td>
-            <td class="box2">
-              <input type="password"  name="memberPasswdChk" id="memberPasswdChk" th:field="*{memberPasswdChk}"
-                     th:class="${#fields.hasErrors('memberPasswdChk') ? 'fieldError' : 'fieldSuccess'}">
-              <li th:if="${#fields.hasErrors('memberPasswdChk')}">
-                <p th:errors="*{memberPasswdChk}" th:errorclass="fieldError"></p>
-              </li>
-              <li th:if="${#fields.hasErrors('global')}">
-                <p th:errors="*{global}" th:errorclass="globalError"></p>
-              </li>
-            </td>
-          </tr>
-          <tr>
-            <td class="box1">
-              <label for="memberTel" th:for="${#ids.next('memberTel')}">휴대전화</label>
-            </td>
-            <td class="box2">
-              <li>
-                <input type="text" name="memberTel" id="memberTel" th:field="*{memberTel}"
-                       th:class="${#fields.hasErrors('memberTel') ? 'fieldError' : 'fieldSuccess'}"
-                       readonly="readonly">
-              </li>
-            </td>
-          </tr>
-          <tr>
-            <td class="box1">
-              <label for="memberName" th:for="${#ids.next('memberName')}">이름</label>
+          </div>
+          <div class="member_passwd">
+            <input type="password" placeholder="비밀번호를 확인해주세요." name="memberPasswdChk" id="memberPasswdChk"
+                   th:field="*{memberPasswdChk}"
+                   th:class="${#fields.hasErrors('memberPasswdChk') ? 'fieldError' : 'fieldSuccess'}">
+            <li th:if="${#fields.hasErrors('memberPasswdChk')}">
+              <p th:errors="*{memberPasswdChk}" th:errorclass="fieldError"></p>
+            </li>
+            <li th:if="${#fields.hasErrors('global')}">
+              <p th:errors="*{global}" th:errorclass="globalError"></p>
+            </li>
+          </div>
+          <div class="member_name">
+            <li>
+              <input type="text" name="memberName" id="memberName" th:field="*{memberName}" placeholder="이름을 입력해주세요."
+                     th:class="${#fields.hasErrors('memberName') ? 'fieldError' : 'fieldSuccess'}">
+            </li>
+            <li th:if="${#fields.hasErrors('memberName')}">
+              <p th:errors="*{memberName}" th:errorclass="fieldError"></p>
+            </li>
+          </div>
+          <div class="member_gender">
+            <li>
+              <th:block th:each=" ele : ${memberGender} ">
+                <label for="male" th:for="${#ids.next('memberGender')}" th:text="${ele.description}"></label>
+                <input type="radio" th:field="*{memberGender}" th:value="${ele.name()}">
+              </th:block>
+              <th:block th:remove="all">
+                <label for="male">남자</label>
+                <input type="radio" name="gender" id="male" value="남자">
+                <label for="female">여자</label>
+                <input type="radio" name="gender" id="female" value="여자">
+              </th:block>
+            </li>
+            <li th:if="${#fields.hasErrors('memberGender')}">
+              <p th:errors="*{memberGender}" th:errorclass="fieldError"></p>
+            </li>
+          </div>
+          <div class="member_birth">
+            <li>
+              <input type="text" placeholder="8자리 생년월일을 입력해주세요. (20220101)" name="memberAge" id="memberAge"
+                     th:field="*{memberAge}"
+                     th:class="${#fields.hasErrors('memberAge') ? 'fieldError' : 'fieldSuccess'}" readonly="readonly">
+            </li>
+            <li th:if="${#fields.hasErrors('memberAge')}">
+              <p th:errors="*{memberAge}" th:errorclass="fieldError"></p>
+            </li>
+          </div>
+          <div class="member_tel">
+            <li>
+              <input type="text" placeholder="전화번호를 입력해주세요. (-제외)" name="memberTel" id="memberTel" th:field="*{memberTel}"
+                     th:class="${#fields.hasErrors('memberTel') ? 'fieldError' : 'fieldSuccess'}" readonly="readonly">
+            </li>
+          </div>
+        </div>
 
-            </td>
-            <td class="box2">
-              <li>
-                <input type="text" name="memberName" id="memberName" th:field="*{memberName}"
-                       th:class="${#fields.hasErrors('memberName') ? 'fieldError' : 'fieldSuccess'}">
-              </li>
-              <li th:if="${#fields.hasErrors('memberName')}">
-                <p th:errors="*{memberName}" th:errorclass="fieldError"></p>
-              </li>
-            </td>
-          </tr>
-          <tr>
-            <td class="box1">
-              <label for="memberAge" th:for="${#ids.next('memberAge')}">생년월일</label>
 
-            </td>
-            <td class="box2">
-              <li>
-                <input type="text" placeholder="8자로 입력해주세요" name="memberAge" id="memberAge" th:field="*{memberAge}"
-                       th:class="${#fields.hasErrors('memberAge') ? 'fieldError' : 'fieldSuccess'}">
-              </li>
-              <li th:if="${#fields.hasErrors('memberAge')}">
-                <p th:errors="*{memberAge}" th:errorclass="fieldError"></p>
-              </li>
-            </td>
-          </tr>
-          <tr>
-            <td class="box1">
-              성별
-            </td>
-            <td class="box2">
-              <li>
-                <th:block th:each=" ele : ${memberGender} ">
-                  <label for="male" th:for="${#ids.next('memberGender')}" th:text="${ele.description}"></label>
-                  <input type="radio" th:field="*{memberGender}" th:value="${ele.name()}">
-                </th:block>
-                <th:block th:remove="all">
-                  <label for="male">남자</label>
-                  <input type="radio" name="gender" id="male" value="남자">
-                  <label for="female">여자</label>
-                  <input type="radio" name="gender" id="female" value="여자">
-                </th:block>
-              </li>
-            </td>
-          </tr>
-
-        </table>
+        <div class="Btn">
+          <button type="button" id="modifyBtn">수정</button>
+        </div>
       </div>
-      <div class="Btn">
-        <input type="button" id="modifyBtn" value="수정">
-        <!--      <input type="button" id="add" value="수정">-->
-        <!--      <input type="button" id="cancel" value="취소">-->
-      </div>
-    </form>
-  </div>
+    </div>
+  </form>
+
   <script>
     //수정 버튼 클릭시
     modifyBtn.addEventListener('click', e => {

@@ -52,12 +52,12 @@
                     <thead>
                     <tr>
                       <th>NO</th>
-                      <th>내부ID</th>
-                      <th>회원아이디</th>
+                      <th>내부 식별ID</th>
+                      <th>회원 아이디</th>
                       <th>비밀번호</th>
                       <th>이름</th>
                       <th>성별</th>
-                      <th>나이</th>
+                      <th>생년월일</th>
                       <th>전화번호</th>
                       <th>추방</th>
                     </tr>
@@ -114,20 +114,22 @@
   </div>
 </div>
 <script>
-    const $memberInfo = document.querySelectorAll('.coffeeShop-content');
-    $memberInfo.addEventListener('click', (evt) => {
-    const [...classValues] = evt.target.classList;
+window.onload = function(){
+  const $memberInfo = document.querySelector('.coffeeShop-content');
+  $memberInfo.addEventListener('click', (evt) => {
+  const [...classValues] = evt.target.classList;
 
-    const memberEmail = evt.target.dataset.memberEmail;
+  const memberEmail = evt.target.dataset.memberEmail;
 
-      if (classValues.includes('memDelBtn')) {
-        if(confirm('정말로 추방하시겠습니까?')) {
-          delForm.action = `/admin/${memberEmail}/memberDel`;
-          delForm.submit();
-        }
-        return;
+    if (classValues.includes('memDelBtn')) {
+      if(confirm('정말로 추방하시겠습니까?')) {
+        delForm.action = `/admin/${memberEmail}/memberDel`;
+        delForm.submit();
       }
-    });
+      return;
+    }
+  });
+}
 </script>
 </body>
 </html>

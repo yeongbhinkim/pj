@@ -40,7 +40,6 @@ public class LoginController {
       BindingResult bindingResult,
       HttpServletRequest request,
       @RequestParam(required = false,defaultValue = "/") String redirectUrl
-//      @RequestParam(required = false,defaultValue = "/coffeeShop/list") String redirectUrl
   ){
 
     //필드 유효성 체크

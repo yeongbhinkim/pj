@@ -56,8 +56,7 @@
                   <th>커피숍이름</th>
                   <th>커피숍주소</th>
                   <th>전화번호</th>
-                  <th>작성일</th>
-                  <th>북마크카운트</th>
+                  <th>등록일자</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -68,8 +67,7 @@
                   </td>
                   <td th:text="${item.shopAddress}">커피숍주소</td>
                   <td th:text="${item.shopTel}">전화번호</td>
-                  <td th:text="${#temporals.format(item.shopCdate,'yy/MM/dd HH:dd')}">작성일</td>
-                  <td th:text="${item.shopBookmarkCnt}">북마크카운트</td>
+                  <td th:text="${#temporals.format(item.shopCdate,'yy/MM/dd HH:dd')}">등록일자</td>
                 </tr>
                 </tbody>
               </table>

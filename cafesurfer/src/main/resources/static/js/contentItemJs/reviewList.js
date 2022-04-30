@@ -116,7 +116,7 @@ function displayItemR(data) {
   const header =
     `<div class="addReview">
       <div class="review-write-box">
-        <input type="text" class="write-review"/>
+        <input type="text" class="write-review" placeholder="리뷰를 작성해주세요"/>
         <button type="button" class="writeBtn">등록</button>
       </div>
     </div>`;

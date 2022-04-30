@@ -9,13 +9,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title th:replace=${title}>회원 수정</title>
+  <title th:replace=${title}>회원 탈퇴</title>
 
   <!--common style-->
   <link rel="stylesheet" href="" th:href="@{/css/common.css}">
-  <link rel="stylesheet" href="" th:href="@{/css/page/member.css}">
-  <link rel="stylesheet" href="" th:href="@{/css/page/info1.css}">
-
+  <link rel="stylesheet" href="" th:href="@{/css/page/my-page.css}">
+  <link rel="stylesheet" href="" th:href="@{/css/parts/my-page-upper.css}">
+  <link rel="stylesheet" href="" th:href="@{/css/member/memberOut.css}">
 
   <!--common script-->
 <!--  <script defer src="xxx.js"></script>-->
@@ -26,8 +26,6 @@
 
   <!-- Per-page placeholder for additional link -->
   <th:block th:replace="${styles}"></th:block>
-  <th:block th:replace="${scripts}"></th:block>
-
   <th:block th:replace="${style}"></th:block>
 
 </head>

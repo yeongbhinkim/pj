@@ -16,14 +16,14 @@
 </head>
 
 <body>
-  <main th:fragment="mypageList">
+  <main th:fragment="mypageList" class="page-main-wrap">
 
     <div class="main-sub">
       <div class="main-nav-title">
         <span>내가 찜한 커피숍</span>
       </div>
-      <ul class="shop-box">
 
+      <ul class="shop-box">
         <li class="shop-each" th:each="item : ${BookmarkList}">
           <div class="shop-container">
             <div class="shop-container-util shop-each_img shop-img-rd ">
@@ -36,30 +36,34 @@
               <ul>
                 <li class="shop-hashtag-rep rep1">
                   <div>
-                    <span th:text="${item.hcategoryh0101}">#콜드브루</span>
-                    <span th:text="${item.hcategoryh0102}">#울산중구</span>
+                    <span class="mainHashtag" th:text="${item.hcategoryh0101}">#콜드브루</span>
+                    <span class="mainHashtag" th:text="${item.hcategoryh0102}">#울산중구</span>
                   </div>
                 </li>
                 <br>
                 <li class="shop-hashtag-rep rep2">
                   <div>
-                    <span th:text="${item.hcategoryh0103}">#포근함</span>
-                    <span th:text="${item.hcategoryh0104}">#공원뷰</span>
+                    <span class="mainHashtag" th:text="${item.hcategoryh0103}">#포근함</span>
+                    <span class="mainHashtag" th:text="${item.hcategoryh0104}">#공원뷰</span>
                   </div>
                 </li>
               </ul>
-              <a href="javascript:void(0)" class="jj-icon">찜</a>
             </div>
           </div>
         </li>
-
-
-
-
       </ul>
     </div>
+  <script>
+    // 대표 해시태그 정보 텍스트 앞에 # 붙이기
+    const $mainHashtag = document.querySelectorAll('.mainHashtag');
 
-
+    $mainHashtag.forEach(ele => {
+      if(ele.textContent.trim().length > 1) {
+        const $hashtagView = "#" + ele.textContent;
+        ele.textContent = $hashtagView;
+      }
+    });
+  </script>
   </main>
 </body>
 

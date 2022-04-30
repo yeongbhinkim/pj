@@ -55,8 +55,4 @@ function del_f(e) {
     });
   }
 
-//이미 찜 등록한 id가 로그인하면 채워진 하트로 표현
-//if (memberId.value == ${bookmark.memberId}) {
-//
-//}
 

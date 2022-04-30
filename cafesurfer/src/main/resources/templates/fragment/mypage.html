@@ -14,6 +14,7 @@
   <!--common style-->
   <link rel="stylesheet" href="" th:href="@{/css/common.css}">
   <link rel="stylesheet" href="" th:href="@{/css/page/my-page.css}">
+  <link rel="stylesheet" href="" th:href="@{/css/parts/my-page-upper.css}">
 
 
   <!--common script-->
@@ -25,8 +26,6 @@
 
   <!-- Per-page placeholder for additional link -->
   <th:block th:replace="${styles}"></th:block>
-  <th:block th:replace="${scripts}"></th:block>
-
   <th:block th:replace="${style}"></th:block>
 
 </head>
@@ -47,14 +46,11 @@
     </div>
   </div>
 
-  <div class="gnb">
-    <div class="inner gnb-inner" th:insert="${nav}">
+  <div class="body-wrap">
+    <div class="inner gnb-inner" th:replace="~{fragment/mypageSide::nav}" th:remove="tag">
       nav
     </div>
-  </div>
-
-  <div class="main">
-    <div class="inner main-inner" th:insert="${main}">
+    <div class="inner main-inner" th:replace="~{fragment/mypageList::main}" th:remove="tag">
       main
     </div>
   </div>

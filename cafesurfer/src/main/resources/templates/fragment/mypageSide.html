@@ -13,7 +13,6 @@
 
 <body>
 <nav th:fragment="mypageSide">
-
   <aside class="page-aside-wrap">
     <div class="aside-menu-tab">
       <div class="aside-title">
@@ -39,8 +38,7 @@
             <a href="javascript:void(0)" class="my-history">회원정보</a>
             <ul>
               <li>
-                <a href="" th:href="@{/members/{MemberEmail}/memberModify(MemberEmail=${s_email})}">- 회원 수정</a>
-                <!--                  <a href="" th:href="@{/members/{email}/memberModify(email=${s_email})}">- 회원 수정</a>-->
+                <a href="" th:href="@{/members/{MemberEmail}/memberModify(MemberEmail=${s_email})}">- 회원 정보 수정</a>
               </li>
               <li>
                 <a href="" th:href="@{/members/{email}/memberDel(email=${s_email})}">- 회원 탈퇴</a>
@@ -51,7 +49,6 @@
       </nav>
     </div>
   </aside>
-
 </nav>
 </body>
 

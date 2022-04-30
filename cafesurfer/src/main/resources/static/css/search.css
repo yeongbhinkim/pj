@@ -4,46 +4,26 @@
 .search-box-wrap {
   width: 100%;
   display: inline-block;
-
-  /* display: block; */
-  /* position: relative; */
 }
 
 .detail-box {
-  /* width: 5%; */
-  /* position: absolute; */
   display: inline-block;
   height: 100%;
   margin-top: 7px;
   margin-right: 5px;
-  /* left: 25px; */
-  /* top: 20px; */
 }
 
 .detail-icon {
   width: 13px;
   height: 10px;
   background-size: cover;
-  background-image: url("/img/icon/icon-triangle_inverted.png");
+  background-image: url('/img/icon/icon-triangle_inverted.png');
   display: block;
   overflow: hidden;
   text-indent: -20000px;
 }
 
-.search-input {
-
-  /* width: 50vw;
-  min-width: 500px;
-  max-width: 650px;
-  flex: 1 1 0%;
-  border-radius: 2rem;
-  padding: 1rem 4rem;
-  font-size: 1rem;
-  border: none; */
-}
-
 .search-box {
-  /* position: absolute; */
   margin-top: 5px;
   margin-right: 3px;
   display: flex;
@@ -56,7 +36,7 @@
   width: 16px;
   height: 17px;
   background-size: cover;
-  background-image: url("/img/icon/icon-search.png");
+  background-image: url('/img/icon/icon-search.png');
   display: block;
   overflow: hidden;
   text-indent: -20000px;
@@ -89,7 +69,7 @@
   width: 13px;
   height: 12px;
   background-size: cover;
-  background-image: url("/img/icon/icon-reset.png");
+  background-image: url('/img/icon/icon-reset.png');
   display: block;
   overflow: hidden;
   text-indent: -20000px;
@@ -172,7 +152,7 @@
   margin-left: -17px;
   border-radius: 11px 11px 0 0;
   font-size: 12px;
-  background-color: #29Aeec;
+  background-color: #29aeec;
   border-bottom: none;
 }
 
@@ -207,7 +187,6 @@
   height: 170px;
 }
 
-/* .list-wrap{width: 69px; border-right: 1px solid rgba(0, 0, 0, 0.459); } */
 .list-wrap {
   width: 50%;
   border-right: 1px solid rgba(0, 0, 0, 0.459);
@@ -228,13 +207,11 @@
 .list-wrap::-webkit-scrollbar-track {
   border: 2px solid transparent;
   background-clip: content-box;
-  background-color: rgba(255, 255, 255, 0.8)
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
-/* .list-loc1,
-.list-loc2{margin-left: -3px;} */
-.list-loc1>li,
-.list-loc2>li {
+.list-loc1 > li,
+.list-loc2 > li {
   padding: 3px;
   text-align: center;
   background-color: #a8d2eb;
@@ -259,9 +236,7 @@
   width: 70%;
   border: none;
   margin-left: 29px;
-  ;
 }
-
 
 .list-wrap-loc1,
 .list-wrap-loc2,
@@ -270,14 +245,12 @@
   overflow-y: scroll;
 }
 
-.list-hashtag>li {
+.list-hashtag > li {
   color: #fff;
   word-break: break-all;
   float: left;
   margin: 0 10px 14px 0;
 }
-
-/* width: 50vw;  min-width: 500px; max-width: 650px; flex: 1 1 0%; border-radius: 2rem; padding: 1rem 4rem; */
 
 /* 상세 박스 */
 .input-group input {
@@ -285,16 +258,16 @@
   height: 100%;
 }
 
-.menu input[type=checkbox] {
+.menu input[type='checkbox'] {
   display: none;
 }
 
-.menu input[type=checkbox]+label {
+.menu input[type='checkbox'] + label {
   padding-left: 25px;
   background-repeat: no-repeat;
 }
 
-.menu input[type=checkbox]+label>span {
+.menu input[type='checkbox'] + label > span {
   font-weight: bold;
 }
 
@@ -314,11 +287,10 @@
   height: 300px;
   list-style: none;
   display: none;
-  /* margin: 0 auto; */
   border-radius: 5px;
 }
 
-.menu input[type=checkbox]:checked~.menuitems {
+.menu input[type='checkbox']:checked ~ .menuitems {
   display: block;
 }
 
@@ -326,14 +298,8 @@
 
 /* 지역 시  */
 .com {
-
   margin: 0;
-  /* width: 50%; */
-  /* height: 229.5px; */
   display: inline-block;
-  /* background-color: brown; */
-  /* float: left; */
-  /* position: relative; */
 }
 
 .com li {
@@ -353,14 +319,7 @@
   font-size: 12px;
   border: 2px solid #fff;
   border-radius: 8px;
-  /* float: left; */
-  /* margin-right: 14px; */
 }
-
-/* .com2 {
-  font-weight: bold;
-  color: green;
-} */
 
 .com3 .cont {
   position: absolute;
@@ -423,7 +382,6 @@ li {
 .input_tag input {
   border: none;
   width: 100%;
-  /* height: 30px; */
 }
 
 .input_tag__tags {
@@ -433,12 +391,11 @@ li {
   padding: 0;
   width: 90%;
   height: 30px;
-  /* width: 100%; */
 }
 
 .input_tag__tags li {
   align-items: center;
-  background: #85A3BF;
+  background: #85a3bf;
   border-radius: 2px;
   color: white;
   display: flex;
@@ -478,11 +435,7 @@ li {
   display: inline-flex;
 }
 
-
 /* 해시태그 끝 */
-
-
-
 
 /* 지역 태그 시작 */
 .areabox {
@@ -491,7 +444,7 @@ li {
 
 .areabox li {
   align-items: center;
-  background: #85A3BF;
+  background: #85a3bf;
   border-radius: 2px;
   color: white;
   display: flex;
@@ -521,7 +474,4 @@ li {
   width: 15px;
 }
 
-
-
 /* 지역 태그 끝 */
-

@@ -22,40 +22,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>회원가입</title>
 
-  <script defer src="" th:src="@{/js/homeJs/beforeDetailChk.js}"></script>
-<!--  <script defer src="" th:src="@{/js/homeJs/beforeArea.js}"></script>-->
-<!--  <script defer src="" th:src="@{/js/homeJs/beforeHashtagbox.js}"></script>-->
-<!--  <script defer src="" th:src="@{/js/homeJs/beforeReset.js}"></script>-->
-  <script defer src="" th:src="@{/js/homeJs/searchBar.js}"></script>
-
 </head>
 <body>
-  <div class="global-wrap">
-    <div class="upm">
-      <div class="inner upm-inner">
-        <th:block th:replace="~{fragment/uppermost::beforeLoginUpm}"></th:block>
-      </div>
+<div class="global-wrap">
+  <div class="upm">
+    <div class="inner upm-inner">
+      <th:block th:replace="~{fragment/uppermost::memberJoin}"></th:block>
     </div>
-    <div class="hdr">
-      <div class="inner hdr-inner">
-        <header></header>
-      </div>
-    </div>
-    <div class="gnb">
-      <div class="inner gnb-inner">
-        <nav></nav>
-      </div>
-    </div>
-    <div class="main">
-      <div class="inner main-inner">
-        <main th:replace="~{memberJoin/memberJoinBox::memberJoinBox}"></main>
-      </div>
-    </div>
-      <div class="foot">
-        <div class="inner foot-inner">
-          <footer></footer>
-        </div>
-      </div>
   </div>
+  <div class="hdr">
+    <div class="inner hdr-inner">
+      <header></header>
+    </div>
+  </div>
+  <div class="gnb">
+    <div class="inner gnb-inner">
+      <nav></nav>
+    </div>
+  </div>
+  <div class="main">
+    <div class="inner main-inner">
+      <main th:replace="~{memberJoin/memberJoinBox::memberJoinBox}"></main>
+    </div>
+  </div>
+  <div class="foot">
+    <div class="inner foot-inner">
+      <footer></footer>
+    </div>
+  </div>
+</div>
 </body>
 </html>

@@ -98,6 +98,13 @@ writeBtn?.addEventListener('click', e=> {
     }
 
 });
+
+// 취소
+cancelBtn?.addEventListener("click", e => {
+ const url = `/admin/coffeeShop/list`;
+  location.href = url;
+});
+
 // 목록
 listBtn?.addEventListener("click", e => {
  const url = `/coffeeShop/list`;

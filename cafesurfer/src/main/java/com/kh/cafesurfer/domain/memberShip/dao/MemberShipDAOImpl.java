@@ -29,8 +29,8 @@ public class MemberShipDAOImpl implements MemberShipDAO{
   public MemberShip insertMember(MemberShip memberShip) {
     //SQL문작성
     StringBuffer sql = new StringBuffer();
-    sql.append("insert into memberShip " );
-    sql.append("values(membership_member_id_seq.nextval, ?, ?, ? , ?, ?, ?) " );
+    sql.append("insert into memberShip ");
+    sql.append("values(membership_member_id_seq.nextval, ?, ?, ?, ?, ?, ?) " );
 
     //SQL실행
     KeyHolder keyHolder = new GeneratedKeyHolder();
